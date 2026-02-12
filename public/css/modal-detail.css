@@ -1,0 +1,220 @@
+/* ================= OVERLAY ================= */
+.modal-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* ================= BOX ================= */
+.modal-box{
+    background: #fff;
+    width: 860px;
+    max-height: 92vh;
+    overflow-y: auto;
+    border-radius: 18px;
+    padding: 26px 30px 28px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    border: none;
+    position: relative;
+}
+
+/* ================= HEADER ================= */
+.modal-header-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    margin-bottom: 12px;
+}
+
+/* LOGO */
+.school-info{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.school-info img{
+    width: 140px;          /* ⬅️ DIKECILIN DIKIT */
+    height: auto;
+    object-fit: contain;
+}
+
+.school-info h4{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f766e;
+}
+
+.school-info span{
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* TANGGAL */
+.modal-date{
+    font-size: 13px;
+    color: #475569;
+    white-space: nowrap;
+}
+
+/* ================= SATU GARIS SAJA ================= */
+.modal-box hr{
+    border: none;
+    height: 2px;
+    background: #d1d5db;
+    margin: 12px 0 26px;
+    border-radius: 2px;
+}
+
+/* ================= TITLE ================= */
+.modal-title{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f766e;
+    margin-bottom: 26px;
+}
+
+/* ================= GRID ================= */
+.detail-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 26px;
+}
+
+/* ================= FORM ================= */
+.form-group label{
+    font-size: 13px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.form-group label span{
+    color: red;
+}
+
+.form-group input,
+.form-group textarea{
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group textarea{
+    height: 240px;      /* ⬅️ DIKECILIN */
+    resize: none;
+}
+
+/* ================= BARIS BAWAH ================= */
+.row-bottom{
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+    align-items: stretch;
+}
+
+/* ================= BUKTI ================= */
+.bukti-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* ❌ HAPUS BINGKAI */
+.bukti-box{
+    flex: 1;
+    background: transparent;     /* ⬅️ PENTING */
+    padding: 0;                  /* ⬅️ PENTING */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* GAMBAR LEBIH KECIL & RAPI */
+.bukti-box img{
+    width: auto;
+    max-width: 100%;
+    max-height: 220px;           /* ⬅️ DIKECILIN */
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+/* ================= STATUS ================= */
+.status-wrapper{
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.status-pill{
+    padding: 8px 22px;           /* ⬅️ LEBIH RINGAN */
+    border-radius: 22px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.status-pill.menunggu{
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.status-pill.diproses{
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-pill.selesai{
+    background: #bbf7d0;
+    color: #15803d;
+}
+
+/* ================= FOOTER ================= */
+.modal-footer{
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-outline{
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    padding: 10px 22px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.btn-primary{
+    background: #0f766e;
+    color: #fff;
+    padding: 10px 26px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ================= ANTI GARIS SILUMAN ================= */
+.modal-box::before,
+.modal-box::after,
+.modal-header-top::before,
+.modal-header-top::after{
+    content: none !important;
+}
+
+/* KUNCI SCROLL BODY */
+body.modal-open {
+    overflow: hidden;
+}
+

@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+/* WRAPPER */
+.auth-wrapper {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('/img/fotosekolah.png') center center / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    pointer-events: none; 
+}
+
+/* CARD */
+.auth-card {
+    position: relative;
+    z-index: 2; 
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    width: 480px;
+}
+
+/* HEADER */
+.auth-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+/* TEXT */
+h2 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+/* FORM */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group span {
+    color: red;
+}
+
+.row {
+    display: flex;
+    gap: 16px;
+}
+
+/* INPUT */
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+/* PASSWORD */
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 45px; /* ruang icon */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 20;
+    pointer-events: auto;
+    color: #666;
+}
+
+/* BUTTON */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: #23979F;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* SWITCH */
+.switch {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.switch a {
+    color: #0057ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ERROR STATE */
+.form-group.error input {
+    border: 1.8px solid #ff3b3b;
+}
+
+.error-text {
+    color: #ff3b3b;
+    font-size: 13px;
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+/* Menghilangkan Icon Bawaan Browser */
+
+/* Edge */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
+}
+
+/* Chrome */
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-clear-button {
+    display: none !important;
+}

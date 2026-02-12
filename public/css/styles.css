@@ -1,0 +1,48 @@
+.profile-section {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.profile-info {
+    text-align: left;
+}
+
+.profile-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.profile-username {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.logout-button {
+    background: #f87171;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.logout-button:hover {
+    background: #e11d48;
+}

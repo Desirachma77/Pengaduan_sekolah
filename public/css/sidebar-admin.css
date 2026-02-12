@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #eee;
+}
+
+/* LOGO */
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.sidebar-logo img {
+    width: 200px;
+}
+
+/* MENU */
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ITEM */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 18px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #132020;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.menu-item img {
+    width: 20px;
+}
+
+/* ACTIVE (DASHBOARD) */
+.menu-item.active {
+    background: #2aa1a8;
+    color: #ffffff;
+}
+
+.menu-item.active img {
+    filter: brightness(0) invert(1);
+}
+
+/* HOVER */
+.menu-item:hover {
+    background: #e6f6f7;
+}
+
+/* FOOTER */
+.sidebar-footer {
+    border: none;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 2px solid #d1d1d1;
+}
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: #ffffff;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 1.5px solid #d1d1d1;
+}
+
+/* PROFIL BUTTON */
+.profil-toggle {
+    background: #0ea5a4;
+    color: white;
+    cursor: pointer;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.profil-toggle img {
+    filter: brightness(0) invert(1);
+}
+
+/* PANEL ADMIN */
+.admin-panel {
+    margin-top: 14px;
+    background: white;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    font-size: 13px;
+    border: 1px solid #eee;
+
+    display: none; /* DEFAULT HIDDEN */
+}
+
+/* SAAT AKTIF */
+.admin-panel.show {
+    display: block;
+}
+
+/* LOGOUT */
+.logout-btn {
+    display: block;
+    margin-top: 10px;
+    background: #ef4444;
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13px;
+}
+/* PROFIL BUTTON */
+.profil-toggle {
+    cursor: pointer;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.profil-toggle img {
+    filter: brightness(0) invert(1);
+}
+
+/* PANEL */
+.admin-panel {
+    margin-top: 14px;
+    background: white;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    font-size: 13px;
+    border: 1px solid #eee;
+
+    display: none;
+    animation: fadeIn 0.2s ease;
+}
+
+.admin-panel.show {
+    display: block;
+}
+
+/* LOGOUT */
+.logout-btn {
+    display: block;
+    margin-top: 10px;
+    background: #ef4444;
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.logout-btn:hover {
+    background: #dc2626;
+}
+
+/* ANIMASI HALUS */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+        -webkit-transform: translateY(5px);
+        -moz-transform: translateY(5px);
+        -ms-transform: translateY(5px);
+        -o-transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+    }
+}
