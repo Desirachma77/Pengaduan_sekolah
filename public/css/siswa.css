@@ -1,0 +1,224 @@
+/* ===== WRAPPER SISWA ===== */
+.siswa-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background: #f9fafb;
+}
+
+/* ===== AREA KANAN ===== */
+.siswa-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== NAVBAR ===== */
+.siswa-navbar {
+    height: 90px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 32px;
+}
+
+/* ===== CONTENT ===== */
+.siswa-content {
+    padding: 24px 32px;
+}
+
+/* ===== NAVBAR SISWA ===== */
+.siswa-navbar {
+    height: 90px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 36px;
+}
+
+/* JUDUL */
+.siswa-navbar .navbar-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2f4f4f;
+    margin: 0;
+}
+
+/* ICON AREA */
+.siswa-navbar .navbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* ICON */
+.siswa-navbar .navbar-icons img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform .2s ease;
+}
+
+.siswa-navbar .navbar-icons img:hover {
+    transform: scale(1.15);
+}
+
+.dashboard-wrapper {
+    padding: 24px 36px;
+}
+
+/* ===== WELCOME ===== */
+.welcome-banner {
+    background: #2b9aa0;
+    border-radius: 16px;
+    padding: 18px 26px;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+.welcome-banner h2 {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.welcome-banner p {
+    font-size: 14px;
+    opacity: .9;
+}
+
+.welcome-banner img {
+    width: 130px;
+}
+
+/* ===== STAT ===== */
+.stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 26px;
+}
+
+.stat-box {
+    border-radius: 14px;
+    padding: 18px;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-box img {
+    width: 46px;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.stat-box.blue { background: #3b82f6; }
+.stat-box.yellow { background: #f59e0b; }
+.stat-box.green { background: #0f766e; }
+
+.stat-box span {
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+}
+
+.stat-box small {
+    font-size: 12px;
+    opacity: .8;
+}
+
+.stat-box h3 {
+    font-size: 28px;
+    margin-top: 4px;
+}
+
+/* ===== TABLE ===== */
+.table-card {
+    background: white;
+    border-radius: 18px;
+    padding: 26px;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dashboard-table thead {
+    background: #2b9aa0;
+    color: white;
+}
+
+.dashboard-table th {
+    padding: 14px;
+    text-align: left;
+}
+
+.dashboard-table td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.bukti-img {
+    width: 46px;
+    border-radius: 6px;
+}
+
+.btn-detail {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-detail img {
+    width: 26px;
+}
+
+/* ===== PAGINATION ===== */
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.pagination {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.pagination button {
+    border: 1px solid #ddd;
+    background: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.pagination .active {
+    background: #2563eb;
+    color: white;
+}

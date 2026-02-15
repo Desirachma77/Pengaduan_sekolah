@@ -738,3 +738,161 @@ table{
     background-color: #d1fae5;   /* hijau muda */
     color: #065f46;              /* hijau tua */
 }
+
+/*notif*/
+/* WRAPPER */
+.notif-wrapper {
+    position: relative;
+}
+
+/* ICON */
+.notif-icon {
+    width: 22px;
+    cursor: pointer;
+}
+
+/* PANEL */
+.notif-panel {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 320px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    padding: 14px;
+    display: none;
+    z-index: 999;
+    animation: fadeNotif 0.2s ease;
+}
+
+.notif-panel.show {
+    display: block;
+}
+
+/* HEADER */
+.notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.notif-dot {
+    background: #2563eb;
+    color: white;
+    font-size: 12px;
+    padding: 2px 7px;
+    border-radius: 20px;
+}
+
+/* ITEM */
+.notif-item {
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.notif-item:hover {
+    background: #f1f5f9;
+}
+
+.notif-item b {
+    display: block;
+    font-size: 13px;
+}
+
+.notif-item span {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* FOOTER */
+.notif-footer {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #16a34a;
+    cursor: pointer;
+}
+
+@keyframes fadeNotif {
+    from { opacity: 0; transform: translateY(5px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================================================= */
+/* ================= HISTORY OVERRIDE =============== */
+/* ================================================= */
+
+/* Card ikut style utama */
+.history-page .table-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 32px;
+    margin-top: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.04);
+}
+
+/* Struktur tabel ikut aspirasi */
+.history-table {
+    width: 100%;
+    border-collapse: separate !important;
+    border-spacing: 0 4px !important;
+}
+
+/* Header sama persis */
+.history-table thead {
+    background: #2b9aa0 !important;
+    color: white;
+}
+
+/* Ukuran kolom konsisten */
+.history-table th {
+    padding: 19px !important;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.history-table td {
+    padding: 17px !important;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 450;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Hover effect IDENTIK */
+.history-table tbody tr {
+    transition: background-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.history-table tbody tr:hover {
+    background-color: #f0fdfa;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,.08);
+    cursor: pointer;
+}
+
+/* Bukti gambar FIXED */
+.history-table td img.bukti-img {
+    width: 90px !important;
+    height: 60px !important;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: auto;
+}
+
+/* Badge status hijau modern */
+.history-table .badge-status.selesai {
+    background-color: #ccfbf1 !important;
+    color: #0f766e !important;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 13px;
+}

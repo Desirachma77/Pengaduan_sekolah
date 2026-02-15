@@ -1,0 +1,185 @@
+/* ================= SIDEBAR SISWA ================= */
+
+.sidebar-siswa {
+    width: 260px;
+    height: 100vh;
+    background: #ffffff;
+    padding: 24px 18px;
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    border-right: 1.5px solid #d1d1d1;
+
+    overflow-y: auto;          /* 🔥 INI KUNCINYA */
+    overflow-x: hidden;
+}
+
+
+/* LOGO */
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.sidebar-logo img {
+    width: 200px;
+}
+
+/* MENU */
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ITEM */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 14px 18px;
+    border-radius: 15px;
+
+    text-decoration: none;
+    color: #132020;
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: all 0.2s ease;
+}
+
+.menu-item img {
+    width: 22px;
+}
+
+/* ACTIVE */
+.menu-item.active {
+    background: #2aa1a8;
+    color: white;
+}
+
+.menu-item.active img {
+    filter: brightness(0) invert(1);
+}
+
+/* HOVER */
+.menu-item:hover {
+    background: #e6f6f7;
+}
+
+/* ================= STATUS DROPDOWN ================= */
+
+.status-toggle {
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.status-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.status-arrow {
+    width: 16px;
+    transition: transform 0.25s ease;
+}
+
+/* rotate saat buka */
+.status-toggle.open .status-arrow {
+    transform: rotate(180deg);
+}
+
+/* SUBMENU */
+.status-submenu {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    margin-left: 12px;
+    margin-top: 4px;
+}
+
+.status-submenu.show {
+    display: flex;
+    animation: fadeIn 0.2s ease;
+}
+
+.submenu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 10px 14px;
+    border-radius: 12px;
+
+    text-decoration: none;
+    font-size: 15px;
+    color: #132020;
+
+    transition: all 0.2s ease;
+}
+
+.submenu-item img {
+    width: 20px;
+}
+
+/* ACTIVE SUB */
+.submenu-item.active {
+    border: 2px solid #2aa1a8;
+    color: #2aa1a8;
+    background: white;
+}
+
+/* HOVER */
+.submenu-item:hover {
+    background: #f0fdfa;
+}
+
+/* ================= FOOTER ================= */
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 70px;
+    border-top: 2px solid #d1d1d1;
+}
+
+/* ================= PROFIL ITEM ================= */
+
+.sidebar-footer .menu-item {
+    padding: 16px 18px;     /* 🔥 bikin lebih tinggi */
+    border-radius: 16px;
+    font-size: 16px;        /* samakan dengan menu lain */
+    font-weight: 500;
+}
+
+/* ICON PROFIL */
+.sidebar-footer .menu-item img {
+    width: 22px;            /* sedikit lebih besar */
+}
+
+/* HOVER BIAR HALUS */
+.sidebar-footer .menu-item:hover {
+    background: #e6f6f7;
+}
+
+
+/* ================= ANIMASI ================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

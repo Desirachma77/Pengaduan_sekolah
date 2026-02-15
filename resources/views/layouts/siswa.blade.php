@@ -1,32 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Dashboard Siswa</title>
+    <meta charset="UTF-8">
+    <title>@yield('title')</title>
 
     <link rel="stylesheet" href="{{ asset('css/sidebar-siswa.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/siswa.css') }}">
 </head>
 <body>
 
+<div class="siswa-wrapper">
+
+    {{-- SIDEBAR --}}
     <x-sidebar-siswa />
 
-    {{-- Sidebar Siswa --}}
-    @include('components.sidebar-siswa')
+    <div class="siswa-main">
 
-    <div class="content">
-        @yield('content')
+        {{-- NAVBAR --}}
+        <x-navbar-siswa />
+
+        {{-- CONTENT --}}
+        <div class="siswa-content">
+            @yield('content')
+        </div>
+
     </div>
+</div>
 
-    <script>
-    const dropdown = document.querySelector('.dropdown-btn');
-    const submenu = document.querySelector('.submenu');
+<script>
+    const toggle = document.getElementById('statusToggle');
+    const submenu = document.getElementById('statusSubmenu');
 
-    dropdown.addEventListener('click', () => {
-        submenu.classList.toggle('active');
+    toggle.addEventListener('click', () => {
+        submenu.classList.toggle('show');
+        toggle.classList.toggle('open');
     });
 </script>
-
-<script src="{{ asset('js/sidebar-siswa.js') }}"></script>
 
 </body>
 </html>

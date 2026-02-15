@@ -5,16 +5,50 @@
         </h1>
     </div>
 
-   <div class="navbar-icons">
-    <a href="{{ route('admin.history') }}" 
-       class="nav-icon {{ request()->routeIs('admin.history') ? 'active' : '' }}">
-        <img src="{{ asset('img/history.png') }}" alt="History">
-    </a>
+    <div class="navbar-icons">
+      <a href="{{ route('admin.history') }}">
+    <img src="{{ asset('img/history.png') }}" alt="History">
+</a>
 
-    <a href="#" class="nav-icon">
-        <img src="{{ asset('img/notif.png') }}" alt="Notifikasi">
-    </a>
+       <div class="notif-wrapper">
+
+    <img src="{{ asset('img/notif.png') }}"
+         id="notifToggle"
+         class="notif-icon"
+         alt="Notifikasi">
+
+    <div class="notif-panel" id="notifPanel">
+
+        <div class="notif-header">
+            <strong>Notifikasi</strong>
+            <span class="notif-dot">3</span>
+        </div>
+
+        <div class="notif-body">
+
+            <div class="notif-item">
+                <b>Aspirasi Selesai</b>
+                <span>Aspirasi telah selesai diproses</span>
+            </div>
+
+            <div class="notif-item">
+                <b>Aspirasi Diproses</b>
+                <span>Aspirasi sedang ditindaklanjuti</span>
+            </div>
+
+            <div class="notif-item">
+                <b>Login Berhasil</b>
+                <span>Anda login ke sistem</span>
+            </div>
+
+        </div>
+
+        <div class="notif-footer">
+            Tandai telah dibaca semua
+        </div>
+
+    </div>
 </div>
 
-
+    </div>
 </div>

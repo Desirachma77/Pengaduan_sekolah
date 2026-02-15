@@ -1,3 +1,5 @@
+/* ================= GLOBAL ================= */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,18 +7,25 @@
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* SIDEBAR */
+/* ================= SIDEBAR ================= */
+
 .sidebar {
-    width: 280px;
+    width: 260px;
     height: 100vh;
     background: #ffffff;
     padding: 24px 18px;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid #eee;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    border-right: 1.5px solid #d1d1d1;
 }
 
-/* LOGO */
+/* ================= LOGO ================= */
+
 .sidebar-logo {
     display: flex;
     align-items: center;
@@ -28,31 +37,36 @@
     width: 200px;
 }
 
-/* MENU */
+/* ================= MENU ================= */
+
 .sidebar-menu {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 }
 
-/* ITEM */
+/* ================= MENU ITEM ================= */
+
 .menu-item {
     display: flex;
     align-items: center;
     gap: 15px;
+
     padding: 14px 18px;
     border-radius: 15px;
+
     text-decoration: none;
     color: #132020;
     font-size: 16px;
-    transition: 0.2s ease;
+
+    transition: all 0.2s ease;
 }
 
 .menu-item img {
     width: 20px;
 }
 
-/* ACTIVE (DASHBOARD) */
+/* ACTIVE */
 .menu-item.active {
     background: #2aa1a8;
     color: #ffffff;
@@ -67,90 +81,48 @@
     background: #e6f6f7;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 .sidebar-footer {
-    border: none;
     margin-top: auto;
     padding-top: 20px;
     border-top: 2px solid #d1d1d1;
 }
 
-.sidebar {
-    width: 260px;
-    height: 100vh;
-    background: #ffffff;
-    padding: 24px 18px;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-right: 1.5px solid #d1d1d1;
-}
+/* ================= PROFIL BUTTON ================= */
 
-/* PROFIL BUTTON */
 .profil-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
     background: #0ea5a4;
     color: white;
+
     cursor: pointer;
-    justify-content: center;
     font-weight: 600;
+
+    border-radius: 14px;
 }
 
 .profil-toggle img {
+    width: 18px;
     filter: brightness(0) invert(1);
 }
 
-/* PANEL ADMIN */
+/* ================= PANEL ADMIN ================= */
+
 .admin-panel {
     margin-top: 14px;
     background: white;
-    border-radius: 14px;
-    padding: 14px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 16px 14px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     text-align: center;
     font-size: 13px;
-    border: 1px solid #eee;
 
-    display: none; /* DEFAULT HIDDEN */
-}
-
-/* SAAT AKTIF */
-.admin-panel.show {
-    display: block;
-}
-
-/* LOGOUT */
-.logout-btn {
-    display: block;
-    margin-top: 10px;
-    background: #ef4444;
-    color: white;
-    padding: 7px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 13px;
-}
-/* PROFIL BUTTON */
-.profil-toggle {
-    cursor: pointer;
-    justify-content: center;
-    font-weight: 600;
-}
-
-.profil-toggle img {
-    filter: brightness(0) invert(1);
-}
-
-/* PANEL */
-.admin-panel {
-    margin-top: 14px;
-    background: white;
-    border-radius: 14px;
-    padding: 14px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    text-align: center;
-    font-size: 13px;
     border: 1px solid #eee;
 
     display: none;
@@ -161,38 +133,63 @@
     display: block;
 }
 
-/* LOGOUT */
-.logout-btn {
+/* ================= TEKS PANEL ================= */
+
+.admin-panel b {
+    font-size: 14px;
+    color: #0f172a;
+}
+
+.admin-panel span {
     display: block;
-    margin-top: 10px;
-    background: #ef4444;
+    margin-top: 4px;
+    color: #64748b;
+}
+
+/* ================= LOGOUT BUTTON (SOFT VERSION) ================= */
+
+.logout-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 18px auto 0;      /* ⬅️ INI BIKIN TENGAH */
+    padding: 9px 18px;
+
+    background: #f87171;      /* merah soft */
     color: white;
-    padding: 7px;
-    border-radius: 10px;
+
+    border-radius: 999px;
     text-decoration: none;
     font-size: 13px;
+    font-weight: 600;
+
+    box-shadow: 0 4px 10px rgba(248, 113, 113, 0.25);
+    transition: all 0.2s ease;
 }
 
+/* HOVER HALUS */
 .logout-btn:hover {
-    background: #dc2626;
+    background: #ef4444;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(248, 113, 113, 0.35);
 }
 
-/* ANIMASI HALUS */
+/* ACTIVE */
+.logout-btn:active {
+    transform: scale(0.96);
+}
+
+
+/* ================= ANIMASI ================= */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(5px);
-        -webkit-transform: translateY(5px);
-        -moz-transform: translateY(5px);
-        -ms-transform: translateY(5px);
-        -o-transform: translateY(5px);
+        transform: translateY(6px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
-        -webkit-transform: translateY(0);
-        -moz-transform: translateY(0);
-        -ms-transform: translateY(0);
-        -o-transform: translateY(0);
     }
 }

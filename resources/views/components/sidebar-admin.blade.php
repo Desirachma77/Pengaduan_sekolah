@@ -3,7 +3,6 @@
     <!-- LOGO -->
     <div class="sidebar-logo">
         <img src="{{ asset('img/logo.png') }}" alt="Logo">
-        <div class="logo-text"></div>
     </div>
 
     <!-- MENU -->
@@ -35,22 +34,26 @@
     <!-- FOOTER -->
     <div class="sidebar-footer">
 
-    <!-- TOMBOL PROFIL -->
-    <div class="menu-item profil-toggle" id="profilToggle">
-        <img src="{{ asset('img/profil.png') }}">
-        <span>Profil</span>
+        <!-- TOMBOL PROFIL -->
+        <div class="menu-item profil-toggle" id="profilToggle">
+            <img src="{{ asset('img/profil.png') }}">
+            <span>Profil</span>
+        </div>
+
+        <!-- PANEL ADMIN -->
+        <div class="admin-panel" id="adminPanel">
+            <strong>ADMIN01</strong>
+            <span>Sandi : admin123</span>
+
+            <!-- FORM LOGOUT (POST - BENAR LARAVEL) -->
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="logout-btn">
+                    Logout
+                </button>
+            </form>
+        </div>
+
     </div>
-
-    <!-- PANEL ADMIN -->
-    <div class="admin-panel" id="adminPanel">
-        <strong>ADMIN01</strong>
-        <span>Sandi : admin123</span>
-
-        <a href="{{ route('logout') }}" class="logout-btn">
-            Logout
-        </a>
-    </div>
-
-</div>
 
 </aside>
