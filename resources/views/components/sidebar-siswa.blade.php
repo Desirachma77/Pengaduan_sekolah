@@ -30,17 +30,20 @@
         </div>
 
         <div class="status-submenu" id="statusSubmenu">
-            <a href="{{ route('siswa.status.menunggu') }}" class="submenu-item">
+            <a href="{{ route('siswa.status.menunggu') }}" 
+            class="submenu-item {{ request()->routeIs('siswa.status.menunggu') ? 'active' : '' }}">
                 <img src="{{ asset('img/menunggu-sidebar.png') }}">
                 Menunggu
             </a>
 
-            <a href="{{ route('siswa.status.diproses') }}" class="submenu-item">
+            <a href="{{ route('siswa.status.diproses') }}" 
+            class="submenu-item {{ request()->routeIs('siswa.status.diproses') ? 'active' : '' }}">
                 <img src="{{ asset('img/proses-sidebar.png') }}">
                 Diproses
             </a>
 
-            <a href="{{ route('siswa.status.selesai') }}" class="submenu-item active">
+            <a href="{{ route('siswa.status.selesai') }}" 
+             class="submenu-item {{ request()->routeIs('siswa.status.selesai') ? 'active' : '' }}">
                 <img src="{{ asset('img/selesai-siswa.png') }}">
                 Selesai
             </a>
