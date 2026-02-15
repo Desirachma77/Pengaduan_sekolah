@@ -10,7 +10,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AspirasiController;
 use App\Http\Controllers\Admin\DataSiswaController;
 use App\Http\Controllers\Admin\HistoryController;
-use App\Http\Controllers\Admin\NotifikasiController;
+use App\Http\Controllers\NotifikasiController;
 
 use App\Http\Controllers\Siswa\DashboardSiswaController;
 use App\Http\Controllers\Siswa\AspirasiSiswaController;
@@ -146,23 +146,23 @@ Route::middleware(['auth', 'siswa'])->prefix('siswa')->group(function () {
     Route::get('/dashboard', [DashboardSiswaController::class, 'index'])
         ->name('siswa.dashboard');
 
-    Route::get('/siswa/aspirasi', function () {
+    Route::get('/aspirasi', function () {
     return view('siswa.aspirasi');
 })->name('siswa.aspirasi');
 
-Route::get('/siswa/status/menunggu', function () {
+Route::get('/status/menunggu', function () {
     return view('siswa.status.menunggu');
 })->name('siswa.status.menunggu');
 
-Route::get('/siswa/status/diproses', function () {
+Route::get('/status/diproses', function () {
     return view('siswa.diproses');
 })->name('siswa.status.diproses');
 
-Route::get('/siswa/status/selesai', function () {
+Route::get('/status/selesai', function () {
     return view('siswa.status.selesai');
 })->name('siswa.status.selesai');
 
-Route::get('/siswa/profil', function () {
+Route::get('/profil', function () {
     return view('siswa.profil');
 })->name('siswa.profil');
 

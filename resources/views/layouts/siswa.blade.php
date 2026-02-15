@@ -31,10 +31,12 @@
     const toggle = document.getElementById('statusToggle');
     const submenu = document.getElementById('statusSubmenu');
 
-    toggle.addEventListener('click', () => {
-        submenu.classList.toggle('show');
-        toggle.classList.toggle('open');
-    });
+    if (toggle) {
+        toggle.addEventListener('click', () => {
+            submenu.classList.toggle('show');
+            toggle.classList.toggle('open');
+        });
+    }
 </script>
 
 </body>

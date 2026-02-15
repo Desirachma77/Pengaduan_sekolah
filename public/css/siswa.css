@@ -32,19 +32,21 @@
 
 /* ===== NAVBAR SISWA ===== */
 .siswa-navbar {
-    height: 90px;
+   height: 100px;
     background: #ffffff;
+
+    /* INI YANG BIKIN GARIS KE POTONG */
     border-bottom: 1px solid #e5e7eb;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 36px;
+    padding: 0 40px;
 }
 
 /* JUDUL */
-.siswa-navbar .navbar-title {
+.navbar-title {
     font-size: 32px;
     font-weight: 700;
     color: #2f4f4f;
@@ -72,6 +74,12 @@
 
 .dashboard-wrapper {
     padding: 24px 36px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    padding-left: 50px; /* geser ke kanan */
 }
 
 /* ===== WELCOME ===== */
@@ -221,4 +229,308 @@
 .pagination .active {
     background: #2563eb;
     color: white;
+}
+
+.navbar-title {
+    margin-left: 220px !important;
+}
+
+/* ===== CONTENT ===== */
+.admin-content {
+    margin-left: 280px;  
+    padding: 24px 40px;
+}
+
+
+/* ===== WELCOME CARD ===== */
+.welcome-card {
+    background: #2b9aa0;
+    border-radius: 10px;
+
+    padding: 10px 20px;
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    /* ukuran lebih kecil */
+    max-width: 1535px;
+
+    /* geser ke kanan */
+    margin-left: auto;
+
+    box-sizing: border-box;
+}
+
+.welcome-text {
+    width: auto;
+}
+
+.welcome-text h2 {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.welcome-text p {
+    color: #e6f6f7;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.welcome-image img {
+    width: 125px;
+    height: auto;
+}
+
+/* ===== STATISTIK GRID ===== */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+/* ===== CARD ===== */
+.stat-card {
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #ffffff;
+    width: 100%;
+    min-height: 90px;
+
+    transition: transform .2s ease, box-shadow .2s ease;
+    justify-content: space-between;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,.18);
+}
+
+/* WARNA */
+.stat-card.blue {
+    background: #3b82f6;
+}
+
+.stat-card.yellow {
+    background: #fbbf24;
+}
+
+.stat-card.green {
+    background: #2b9aa0;
+}
+
+.stat-text span {
+    display: block;        
+    font-size: 25px;
+    opacity: .9;
+    margin-bottom: 6px;   
+    line-height: 2; 
+}
+
+.stat-text p {
+    font-size: 15px;       
+    margin-bottom: 10px;   
+}
+
+.stat-text h3 {
+    font-size: 35px;
+    font-weight: 700;
+    margin-top: 0;        
+}
+
+.stat-text span { margin-bottom: 4px; }
+.stat-text p    { margin-bottom: 8px; }
+
+
+/* ICON */
+.stat-icon {
+    background: rgba(255,255,255,0.25);
+    padding: 17px;
+    border-radius: 15px;
+    margin-right: 16px;
+}
+
+.stat-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+/* ===== TABLE CARD ===== */
+.table-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 32px;
+    margin-top: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.04);
+}
+
+/* TABLE HEADER */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    margin-bottom: 40px;
+}
+
+.table-header h3 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* SEARCH */
+.table-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #f9fafb;          /* abu muda */
+    border-radius: 999px;         /* pill */
+    padding: 10px 16px;
+
+    width: 320px;
+}
+
+.table-search img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.8;
+}
+
+.table-search input {
+    border: none;
+    outline: none;
+    background: transparent;
+
+    font-size: 15px;
+    color: #374151;
+    width: 100%;
+}
+
+.table-search input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* TABLE */
+.aspirasi-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 4px;   /* jarak antar row */
+}
+
+.aspirasi-table thead {
+    background: #2b9aa0;
+    color: white;
+}
+
+.aspirasi-table th{
+    padding: 19px;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.aspirasi-table td {
+    padding: 17px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 450;
+}
+
+.aspirasi-table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.aspirasi-table tbody tr {
+    transition: 
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.aspirasi-table tbody tr:hover {
+    background-color: #f0fdfa;           /* hijau muda */
+    transform: translateY(-2px);         /* naik dikit */
+    box-shadow: 0 6px 16px rgba(0,0,0,.08);
+    cursor: pointer;
+}
+
+
+/* ACTION */
+
+
+.btn-aksi img {
+    width: 30px;
+    opacity: 0.8;
+    
+}
+
+.btn-aksi {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 1px;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* PAGINATION */
+.pagination {
+    display: flex;
+    gap: 8px;
+}
+
+.pagination button {
+    border: 1px solid #e5e7eb;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.pagination .active {
+    background: #14b8a6;
+    color: white;
+}
+
+.empty-table {
+    text-align: center;
+    padding: 40px 0;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+.empty-table p {
+    margin: 0;
+}
+
+.empty-link {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    color: #64748b;
+    text-decoration: none;
+}
+
+.empty-link:hover {
+    color: #2b9aa0;
 }
