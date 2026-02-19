@@ -47,7 +47,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 */
 
 Route::prefix('admin')
-    ->middleware(['auth', 'role:admin'])
+    ->middleware(['auth', 'admin'])
     ->group(function () {
 
         /*
@@ -143,24 +143,39 @@ Route::get('/cek-gd', function () {
 
 Route::middleware(['auth', 'siswa'])->prefix('siswa')->group(function () {
 
+    /*
+    |---------------- DASHBOARD SISWA ----------------|
+    */
+
     Route::get('/dashboard', [DashboardSiswaController::class, 'index'])
         ->name('siswa.dashboard');
 
-    Route::get('/aspirasi', function () {
-    return view('siswa.aspirasi');
-})->name('siswa.aspirasi');
+    /*
+    |---------------- ASPIRASI SISWA ----------------|
+    */
 
-Route::get('/status/menunggu', function () {
-    return view('siswa.status.menunggu');
-})->name('siswa.status.menunggu');
+    Route::get('/siswa/aspirasi', [AspirasiSiswaController::class, 'index'])
+        ->name('siswa.aspirasi');
 
-Route::get('/status/diproses', function () {
-    return view('siswa.diproses');
-})->name('siswa.status.diproses');
+    Route::post('/siswa/aspirasi/store', [AspirasiSiswaController::class, 'store'])
+        ->name('siswa.aspirasi.store');
 
-Route::get('/status/selesai', function () {
-    return view('siswa.status.selesai');
-})->name('siswa.status.selesai');
+    /*
+    |---------------- STATUS SISWA ----------------|
+    */
+
+    Route::get('/status/menunggu', [DashboardSiswaController::class, 'menunggu'])
+        ->name('siswa.status.menunggu');
+
+    Route::get('/status/menunggu/search', [DashboardSiswaController::class, 'search']);
+
+
+
+    Route::get('/status/diproses', [DashboardSiswaController::class, 'diproses'])
+        ->name('siswa.status.diproses');
+
+    Route::get('/status/selesai', [DashboardSiswaController::class, 'selesai'])
+        ->name('siswa.status.selesai');
 
 Route::get('/profil', function () {
     return view('siswa.profil');

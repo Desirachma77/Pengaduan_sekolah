@@ -3,11 +3,19 @@
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,.45);
-    display: none;
+
+    display: none;                 /* default hidden */
     justify-content: center;
     align-items: center;
+
     z-index: 9999;
 }
+
+/* 🔥 FIX WAJIB – TANPA INI MODAL TIDAK MUNCUL */
+.modal-overlay.show{
+    display: flex;
+}
+
 
 /* ================= BOX ================= */
 .modal-box{
@@ -15,12 +23,26 @@
     width: 860px;
     max-height: 92vh;
     overflow-y: auto;
+
     border-radius: 18px;
     padding: 26px 30px 28px;
     box-shadow: 0 20px 50px rgba(0,0,0,.25);
+
     border: none;
     position: relative;
+
+    /* ANIMASI AWAL */
+    transform: scale(.95);
+    opacity: 0;
+    transition: .18s ease;
 }
+
+/* ================= ANIMASI AKTIF ================= */
+.modal-overlay.show .modal-box{
+    transform: scale(1);
+    opacity: 1;
+}
+
 
 /* ================= HEADER ================= */
 .modal-header-top{
@@ -39,31 +61,20 @@
 }
 
 .school-info img{
-    width: 140px;          /* ⬅️ DIKECILIN DIKIT */
+    width: 140px;
     height: auto;
     object-fit: contain;
 }
 
-.school-info h4{
-    margin: 0;
-    font-size: 16px;
-    font-weight: 700;
-    color: #0f766e;
-}
-
-.school-info span{
-    font-size: 13px;
-    color: #64748b;
-}
-
 /* TANGGAL */
-.modal-date{
+.date-info{
     font-size: 13px;
     color: #475569;
     white-space: nowrap;
 }
 
-/* ================= SATU GARIS SAJA ================= */
+
+/* ================= GARIS ================= */
 .modal-box hr{
     border: none;
     height: 2px;
@@ -71,6 +82,7 @@
     margin: 12px 0 26px;
     border-radius: 2px;
 }
+
 
 /* ================= TITLE ================= */
 .modal-title{
@@ -81,12 +93,14 @@
     margin-bottom: 26px;
 }
 
+
 /* ================= GRID ================= */
 .detail-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 22px 26px;
 }
+
 
 /* ================= FORM ================= */
 .form-group label{
@@ -112,44 +126,33 @@
 }
 
 .form-group textarea{
-    height: 240px;      /* ⬅️ DIKECILIN */
+    height: 240px;
     resize: none;
 }
 
-/* ================= BARIS BAWAH ================= */
-.row-bottom{
-    grid-column: span 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 26px;
-    align-items: stretch;
-}
 
 /* ================= BUKTI ================= */
 .bukti-wrapper{
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
-/* ❌ HAPUS BINGKAI */
 .bukti-box{
-    flex: 1;
-    background: transparent;     /* ⬅️ PENTING */
-    padding: 0;                  /* ⬅️ PENTING */
+    background: transparent;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* GAMBAR LEBIH KECIL & RAPI */
 .bukti-box img{
     width: auto;
     max-width: 100%;
-    max-height: 220px;           /* ⬅️ DIKECILIN */
+    max-height: 220px;
     object-fit: contain;
     border-radius: 12px;
 }
+
 
 /* ================= STATUS ================= */
 .status-wrapper{
@@ -160,12 +163,13 @@
 }
 
 .status-pill{
-    padding: 8px 22px;           /* ⬅️ LEBIH RINGAN */
+    padding: 8px 22px;
     border-radius: 22px;
     font-weight: 600;
     font-size: 13px;
 }
 
+/* WARNA STATUS */
 .status-pill.menunggu{
     background: #fee2e2;
     color: #b91c1c;
@@ -180,6 +184,7 @@
     background: #bbf7d0;
     color: #15803d;
 }
+
 
 /* ================= FOOTER ================= */
 .modal-footer{
@@ -205,7 +210,8 @@
     cursor: pointer;
 }
 
-/* ================= ANTI GARIS SILUMAN ================= */
+
+/* ================= CLEANUP (ANTI BUG VISUAL) ================= */
 .modal-box::before,
 .modal-box::after,
 .modal-header-top::before,
@@ -213,8 +219,8 @@
     content: none !important;
 }
 
-/* KUNCI SCROLL BODY */
-body.modal-open {
+
+/* ================= LOCK BODY SCROLL ================= */
+body.modal-open{
     overflow: hidden;
 }
-

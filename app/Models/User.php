@@ -50,8 +50,12 @@ class User extends Authenticatable
         ];
     }
 
-    public function siswa()
-    {
-        return $this->hasOne(Siswa::class);
-    }
+    public function siswa(): HasOne
+{
+    return $this->hasOne(Siswa::class, 'user_id', 'id');
+}
+
+
+
+    
 }

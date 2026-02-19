@@ -13,8 +13,12 @@ class Aspirasi extends Model
     protected $table = 'aspirasi';
     protected $primaryKey = 'id_aspirasi';
 
+    public $incrementing = true;     // 🔥 WAJIB
+    protected $keyType = 'int';      // 🔥 WAJIB
+
     protected $fillable = [
         'siswa_id',
+        'nama_siswa', 
         'id_kategori',
         'id_admin',
         'lokasi',
@@ -23,8 +27,6 @@ class Aspirasi extends Model
         'status',
         'feedback',
     ];
-
-    // ================= RELATION =================
 
     public function siswa(): BelongsTo
     {

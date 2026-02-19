@@ -6,6 +6,8 @@
 
     <link rel="stylesheet" href="{{ asset('css/sidebar-siswa.css') }}">
     <link rel="stylesheet" href="{{ asset('css/siswa.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/filter-tanggal.css') }}">
+
 </head>
 <body>
 
@@ -38,6 +40,8 @@
         });
     }
 </script>
+
+<script src="{{ asset('js/filter-tanggal.js') }}" defer></script>
 
 </body>
 </html>

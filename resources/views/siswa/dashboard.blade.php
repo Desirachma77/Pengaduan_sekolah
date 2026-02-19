@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.siswa')
 
 @section('navbar-title', 'Dashboard')
 
@@ -7,7 +7,10 @@
 {{-- ================= WELCOME CARD ================= --}}
 <div class="welcome-card">
     <div class="welcome-text">
-        <h2>Selamat Datang, Desi!</h2>
+        <h2>
+            Selamat Datang,
+            {{ auth()->user()->siswa?->nama_lengkap ?? 'Siswa' }}!
+        </h2>
         <p>Dashboard ini menampilkan ringkasan aspirasi dan status penanganan.</p>
     </div>
 
@@ -19,7 +22,6 @@
 {{-- ================= STATISTIK CARD ================= --}}
 <div class="stat-grid">
 
-    {{-- CARD DATA SISWA --}}
     <a href="{{ route('siswa.status.menunggu') }}" class="stat-card blue card-link">
         <div class="stat-text">
             <span>Aspirasi Menunggu</span>
@@ -27,23 +29,21 @@
             <h3>{{ $aspirasiMenunggu }}</h3>
         </div>
         <div class="stat-icon">
-            <img src="{{ asset('img/data.png') }}" alt="Data Siswa">
+            <img src="{{ asset('img/data.png') }}">
         </div>
     </a>
 
-    {{-- CARD ASPIRASI DIPROSES --}}
-    <a href="{{ route('siswa.status.diproses', ['status' => 'diproses']) }}" class="stat-card yellow card-link">
+    <a href="{{ route('siswa.status.diproses') }}" class="stat-card yellow card-link">
         <div class="stat-text">
             <span>Aspirasi Diproses</span>
             <p>Total</p>
             <h3>{{ $aspirasiDiproses }}</h3>
         </div>
         <div class="stat-icon">
-            <img src="{{ asset('img/proses.png') }}" alt="Diproses">
+            <img src="{{ asset('img/proses.png') }}">
         </div>
     </a>
 
-    {{-- CARD ASPIRASI SELESAI --}}
     <a href="{{ route('siswa.status.selesai') }}" class="stat-card green card-link">
         <div class="stat-text">
             <span>Aspirasi Selesai</span>
@@ -51,7 +51,7 @@
             <h3>{{ $aspirasiSelesai }}</h3>
         </div>
         <div class="stat-icon">
-            <img src="{{ asset('img/selesai.png') }}" alt="Selesai">
+            <img src="{{ asset('img/selesai.png') }}">
         </div>
     </a>
 
@@ -61,7 +61,7 @@
 <div class="table-card">
 
     <div class="table-header">
-        <h3>Status Aspirasi Terbaru</h3>
+        <h3>Status Aspirasi Terbaru Saya</h3>
     </div>
 
     <table class="aspirasi-table">
@@ -81,21 +81,31 @@
 
         <tbody>
         @forelse ($aspirasiTerbaru as $item)
-            <tr
-                onclick="window.location='{{ route('siswa.status.menunggu') }}'"
-                style="cursor:pointer"
-            >
+            <tr>
+
                 <td>#{{ $item->id }}</td>
-                <td>{{ $item->created_at->format('d-m-Y') }}</td>
-                <td>{{ $item->siswa?->nis ?? '-' }}</td>
-                <td>{{ $item->siswa?->nama_lengkap ?? '-' }}</td>
-                <td>{{ $item->kategori?->ket_kategori ?? '-' }}</td>
-                <td>{{ $item->lokasi }}</td>
-                <td>{{ Str::limit($item->ket_laporan ?? $item->keterangan, 30) }}</td>
+
                 <td>
-                    @if ($item->foto_bukti ?? $item->bukti)
+                    {{ $item->created_at ? $item->created_at->format('d-m-Y') : '-' }}
+                </td>
+
+                <td>{{ $item->siswa->nis ?? '-' }}</td>
+
+                <td>{{ $item->siswa->nama_lengkap ?? '-' }}</td>
+
+                <td>{{ $item->kategori->ket_kategori ?? '-' }}</td>
+
+                <td>{{ $item->lokasi }}</td>
+
+                <td>
+                    {{ \Illuminate\Support\Str::limit($item->ket_laporan, 35) }}
+                </td>
+
+                {{-- ✅ BAGIAN YANG SUDAH DIPERBAIKI --}}
+                <td>
+                    @if ($item->foto_bukti)
                         <img
-                            src="{{ asset('storage/' . ($item->foto_bukti ?? $item->bukti)) }}"
+                            src="{{ Storage::url($item->foto_bukti) }}"
                             alt="Bukti"
                             class="bukti-img"
                         >
@@ -103,18 +113,18 @@
                         -
                     @endif
                 </td>
+
                 <td>
                     <span class="status-badge {{ strtolower($item->status) }}">
                         {{ $item->status }}
                     </span>
                 </td>
+
             </tr>
         @empty
             <tr>
-                <td colspan="10" class="empty-table">
-                    <a href="{{ route('siswa.status.menunggu') }}" class="empty-link">
-                        Belum ada data aspirasi
-                    </a>
+                <td colspan="9" class="empty-table">
+                    Belum ada data aspirasi
                 </td>
             </tr>
         @endforelse
@@ -123,12 +133,6 @@
 
     <div class="table-footer">
         <span>Menampilkan {{ $aspirasiTerbaru->count() }} data</span>
-
-        <div class="pagination">
-            <button disabled>&lt;</button>
-            <button class="active">1</button>
-            <button disabled>&gt;</button>
-        </div>
     </div>
 
 </div>
